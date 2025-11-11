@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal de Educación ATU</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="196x196"
+      href="/assets/professional_certificate_creation_tool/atu_logo.png"
+    />
+    <script type="module" crossorigin src="/assets/professional_certificate_creation_tool/frontend/assets/index-1f5f3a1b.js"></script>
+    <link rel="stylesheet" href="/assets/professional_certificate_creation_tool/frontend/assets/index-8f989dda.css">
+  </head>
+  <body class="overscroll-y-none no-scrollbar">
+    <div id="app" class="h-full"></div>
+    <div id="modals"></div>
+    <div id="popovers"></div>
+
+    <script>
+      {% for key in boot %}
+        window["{{ key }}"] = {{ boot[key] | tojson }};
+      {% endfor %}
+    </script>
+    
+  </body>
+</html>
