@@ -1,12 +1,12 @@
 app_name = "professional_certificate_creation_tool"
-app_title = "Portal de Educación ATU"
+app_title = "Custom App"
 app_publisher = "Xappiens"
-app_description = "Portal de Educación y Certificación Profesional ATU"
+app_description = "A powerful custom app boilerplate based on Frappe CRM"
 app_email = "xappiens@xappiens.com"
 app_license = "mit"
 app_icon_url = ""
-app_icon_title = "Educación ATU"
-app_icon_route = "/education"
+app_icon_title = "Custom App"
+app_icon_route = "/frontend"
 # required_apps = []
 
 # Includes in <head>

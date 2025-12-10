@@ -1,155 +1,125 @@
-# Frappe Base App - Portal de Educación ATU
+# 🚀 Custom App Boilerplate
+> *The ultimate boilerplate for building modern Frappe applications.*
 
-Una aplicación base de Frappe que replica exactamente el portal público de Frappe CRM, adaptada para crear portales educativos.
+[![Made with Frappe](https://img.shields.io/badge/Made_with-Frappe-blue.svg?style=flat-square)](https://frappeframework.com)
+[![Vue.js 3](https://img.shields.io/badge/Frontend-Vue.js_3-42b883.svg?style=flat-square)](https://vuejs.org/)
+[![Built by Xappiens](https://img.shields.io/badge/Built_by-Xappiens-orange.svg?style=flat-square)](https://xappiens.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-## 🎯 Características
+**Custom App Boilerplate** is a community initiative by **[Xappiens](https://xappiens.com)**. We've extracted the powerful frontend structure from **Frappe CRM** and adapted it into a clean slate, so you don't have to start from scratch.
 
-### Portal Web Completo
-- **Réplica exacta del portal CRM**: Mismo diseño, sidebar, navbar y componentes
-- **Componentes de Frappe UI**: Todos los componentes preconstruidos de frappe-ui
-- **Sistema de permisos idéntico**: Autenticación y autorización como en CRM
-- **Responsive design**: Funciona perfectamente en móvil y desktop
+The result? A solid, modern, production-ready foundation perfect for building **corporate portals**, educational platforms, or any app requiring a polished frontend and seamless Frappe integration.
 
-### Módulos Educativos
-- **👥 Estudiantes**: Gestión completa de estudiantes
-- **📚 Cursos**: Administración de cursos y programas educativos
-- **🏆 Certificados**: Generación y gestión de certificados profesionales
-- **🎓 Programas**: Programas educativos y especializaciones
-- **👨‍🏫 Instructores**: Gestión del equipo docente
-- **📝 Evaluaciones**: Sistema de exámenes y evaluaciones
-- **📄 Plantillas**: Diseño de plantillas para certificados
-- **📊 Reportes**: Analíticas y métricas educativas
+---
 
-## 🚀 Instalación
+## ✨ Why use this boilerplate?
 
-### Prerrequisitos
-- Frappe Framework v15+
-- Node.js 18+
-- Python 3.10+
+Skip the setup for routes, authentication, and basic components. Here's what you get out of the box:
 
-### Pasos de instalación
+### 🎨 Premium User Experience
+*   **CRM Replica**: Inherits the clean design, collapsible sidebar, and responsive navbar you love from Frappe CRM.
+*   **Modern Frontend**: Built with **Vue 3**, **Frappe UI**, and **Tailwind CSS**. Fast, reactive, and beautiful by default.
+*   **Fully Responsive**: Looks amazing on laptops, tablets, and mobile devices effortlessly.
 
-1. **Clonar la aplicación**
+### 🛡️ Robust & Secure
+*   **Native Permission Management**: Uses Frappe's role and permission system. If a user doesn't have access, they don't see the module. Simple.
+*   **Integrated Authentication**: Login and session management ready to go.
+
+### 🧩 Modular & Extensible
+*   **Ready-to-use Modules**: Comes with functional examples to guide your development.
+*   **Clean Architecture**: Clear separation between frontend (Vue) and backend (Python/Frappe), facilitating scalable development.
+
+---
+
+## 🚀 How to Make it Yours (Quick Start)
+
+Deploy your own custom app in minutes.
+
+### Prerequisites
+*   Frappe Framework v15+
+*   Node.js 18+
+
+### 1. Clone the Repository
+Go to your bench directory and clone the app.
 ```bash
 cd frappe-bench
 bench get-app https://github.com/Xappiens/frappe_base_app.git
 ```
 
-2. **Instalar en un sitio**
+### 2. Install on Your Site
+Install the app on your Frappe site to verify it works.
 ```bash
-bench --site tu-sitio.com install-app professional_certificate_creation_tool
+bench --site your-site.com install-app professional_certificate_creation_tool
 ```
 
-3. **Construir assets**
+### 3. Rename the App (Crucial Step)
+To make this app truly yours (e.g., `my_cool_app`), you need to rename the directories and update the code references.
+
+**Option A: The "New App" Method (Recommended)**
+The clean way is to create a new app and copy the `frontend` folder and necessary backend logic.
+1.  Create your new app: `bench new-app my_cool_app`
+2.  Copy the `frontend` folder from this repo to your new app.
+3.  Copy the logic from `hooks.py` and your desired controllers.
+
+**Option B: Rename In-Place**
+If you want to rename *this* repo directly:
+1.  Rename the directory:
+    ```bash
+    mv apps/professional_certificate_creation_tool apps/my_cool_app
+    ```
+2.  Rename the inner python package:
+    ```bash
+    mv apps/my_cool_app/professional_certificate_creation_tool apps/my_cool_app/my_cool_app
+    ```
+3.  Find and replace all occurrences of `professional_certificate_creation_tool` with `my_cool_app` in all files (use VS Code or `sed`).
+4.  Re-install the app on your site.
+
+### 4. Build the Frontend
+Once renamed and installed, build the assets.
 ```bash
 bench build
 ```
 
-## 🛠️ Desarrollo
-
-### Estructura del proyecto
-```
-professional_certificate_creation_tool/
-├── package.json                    # Workspace setup
-├── frontend/                       # Frontend Vue.js
-│   ├── src/
-│   │   ├── components/             # Componentes Vue
-│   │   ├── pages/                  # Páginas del portal
-│   │   ├── stores/                 # Pinia stores
-│   │   └── utils/                  # Utilidades
-│   ├── package.json               # Dependencias frontend
-│   └── vite.config.js             # Configuración Vite
-├── professional_certificate_creation_tool/
-│   ├── www/                       # Portal web backend
-│   │   ├── education.py           # Contexto y autenticación
-│   │   └── education.html         # Template HTML
-│   ├── public/frontend/           # Assets compilados
-│   └── hooks.py                   # Configuración de la app
-└── pyproject.toml                 # Configuración Python
-```
-
-### Comandos de desarrollo
-
-```bash
-# Desarrollo con hot reload
-cd apps/professional_certificate_creation_tool
-yarn dev
-
-# Build para producción
-yarn build
-
-# Instalar dependencias
-yarn install
-```
-
-### Personalización
-
-#### Cambiar branding
-1. Editar `frontend/src/components/UserDropdown.vue` para cambiar el logo y nombre
-2. Modificar `frontend/index.html` para el título y favicon
-3. Actualizar `professional_certificate_creation_tool/hooks.py` para metadatos
-
-#### Agregar nuevos módulos
-1. Crear páginas en `frontend/src/pages/`
-2. Agregar rutas en `frontend/src/router.js`
-3. Actualizar sidebar en `frontend/src/components/Layouts/AppSidebar.vue`
-
-## 🎨 Tecnologías utilizadas
-
-### Frontend
-- **Vue.js 3**: Framework principal
-- **Frappe UI**: Biblioteca de componentes
-- **Tailwind CSS**: Estilos y diseño
-- **Vite**: Build tool y dev server
-- **Pinia**: State management
-- **Vue Router**: Enrutamiento
-
-### Backend
-- **Frappe Framework**: Framework backend
-- **Python**: Lógica del servidor
-- **Jinja2**: Templates HTML
-
-## 📱 Portal Web
-
-El portal está disponible en: `https://tu-sitio.com/education`
-
-### Características del portal
-- **Autenticación**: Login/logout integrado con Frappe
-- **Navegación**: Sidebar colapsible con todos los módulos
-- **Responsive**: Funciona en móvil y desktop
-- **Componentes**: Todos los componentes de Frappe UI disponibles
-
-## 🔧 Configuración
-
-### Rutas web
-La aplicación configura automáticamente las rutas:
-- `/education/*` → Portal principal
-- Todas las subrutas son manejadas por Vue Router
-
-### Permisos
-El sistema de permisos es idéntico al de Frappe CRM:
-- Autenticación requerida para acceder al portal
-- Roles y permisos configurables desde Frappe desk
-- Sesiones manejadas automáticamente
-
-## 📄 Licencia
-
-MIT License - Ver [LICENSE](license.txt) para más detalles.
-
-## 🤝 Contribuir
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📞 Soporte
-
-Para soporte y consultas:
-- **Email**: xappiens@xappiens.com
-- **GitHub Issues**: [Crear issue](https://github.com/Xappiens/frappe_base_app/issues)
+Access your portal at `https://your-site.com/frontend` (or your configured route).
 
 ---
 
-**Desarrollado por [Xappiens](https://xappiens.com)** 🚀
+## 🛠️ Tech Stack
+
+The winning combination for modern enterprise apps:
+
+| Area | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Backend** | 🐍 **Frappe Framework** | Business logic, database, and REST API. |
+| **Frontend** | 💚 **Vue.js 3** | Reactive framework for dynamic UI. |
+| **UI Kit** | 🧩 **Frappe UI** | Pre-designed components (buttons, dialogs, lists). |
+| **Styling** | 🌊 **Tailwind CSS** | Fast and maintainable utility-first styling. |
+| **Build** | ⚡ **Vite** | Blazing fast development environment. |
+
+---
+
+## 🤝 A Contribution by Xappiens
+
+At **[Xappiens](https://xappiens.com)**, we believe in the power of **Open Source**. This project is our way of giving back to the amazing Frappe community.
+
+We want to empower developers like you to build incredible tools without wasting time on initial setup.
+
+### Love this project?
+*   ⭐ **Star** the repo on GitHub.
+*   🐞 **Report issues** if you find anything to improve.
+*   👩‍💻 **Contribute** with PRs to make it even better.
+
+---
+
+## 📞 Support & Community
+
+If you have questions or need professional help with your Frappe projects:
+
+*   🌐 Web: [xappiens.com](https://xappiens.com)
+*   📧 Email: xappiens@xappiens.com
+*   🐙 GitHub: [Xappiens](https://github.com/Xappiens)
+
+---
+<div align="center">
+  <sub>Made with ❤️ code and coffee by the Xappiens team.</sub>
+</div>
