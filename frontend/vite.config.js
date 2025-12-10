@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../professional_certificate_creation_tool/public/frontend',
+    outDir: '../custom_app/public/frontend',
     emptyOutDir: true,
     commonjsOptions: {
       include: [/tailwind.config.js/, /node_modules/],

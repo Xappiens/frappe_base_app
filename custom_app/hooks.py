@@ -1,4 +1,4 @@
-app_name = "professional_certificate_creation_tool"
+app_name = "custom_app"
 app_title = "Custom App"
 app_publisher = "Xappiens"
 app_description = "A powerful custom app boilerplate based on Frappe CRM"
@@ -6,7 +6,7 @@ app_email = "xappiens@xappiens.com"
 app_license = "mit"
 app_icon_url = ""
 app_icon_title = "Custom App"
-app_icon_route = "/frontend"
+app_icon_route = "/portal"
 # required_apps = []
 
 # Includes in <head>
@@ -53,7 +53,7 @@ app_icon_route = "/frontend"
 # }
 
 website_route_rules = [
-	{"from_route": "/education/<path:app_path>", "to_route": "education"},
+	{"from_route": "/portal/<path:app_path>", "to_route": "portal"},
 ]
 
 # Generators
@@ -224,7 +224,7 @@ website_route_rules = [
 # --------------------------------
 
 # auth_hooks = [
-# 	"professional_certificate_creation_tool.auth.validate"
+# 	"custom_app.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.

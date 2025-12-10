@@ -53,7 +53,7 @@ app.config.globalProperties.$dialog = createDialog
 
 let socket
 if (import.meta.env.DEV) {
-  frappeRequest({ url: '/api/method/professional_certificate_creation_tool.www.education.get_context_for_dev' }).then(
+  frappeRequest({ url: '/api/method/custom_app.www.portal.get_context_for_dev' }).then(
     (values) => {
       for (let key in values) {
         window[key] = values[key]

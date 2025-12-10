@@ -1,5 +1,5 @@
 [project]
-name = "professional_certificate_creation_tool"
+name = "custom_app"
 authors = [
     { name = "Xappiens", email = "xappiens@xappiens.com"}
 ]

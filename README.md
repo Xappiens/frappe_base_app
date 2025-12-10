@@ -29,6 +29,10 @@ Skip the setup for routes, authentication, and basic components. Here's what you
 *   **Ready-to-use Modules**: Comes with functional examples to guide your development.
 *   **Clean Architecture**: Clear separation between frontend (Vue) and backend (Python/Frappe), facilitating scalable development.
 
+### ⚙️ Easy Configuration
+*   **Dynamic App Title**: Configurable via the **App Settings** DocType in the Desk. No code changes needed to update the site title.
+*   **Workspace Management**: Easily manage your app's workspace and navigation.
+
 ---
 
 ## 🚀 How to Make it Yours (Quick Start)
@@ -49,7 +53,7 @@ bench get-app https://github.com/Xappiens/frappe_base_app.git
 ### 2. Install on Your Site
 Install the app on your Frappe site to verify it works.
 ```bash
-bench --site your-site.com install-app professional_certificate_creation_tool
+bench --site your-site.com install-app custom_app
 ```
 
 ### 3. Rename the App (Crucial Step)
@@ -65,13 +69,13 @@ The clean way is to create a new app and copy the `frontend` folder and necessar
 If you want to rename *this* repo directly:
 1.  Rename the directory:
     ```bash
-    mv apps/professional_certificate_creation_tool apps/my_cool_app
+    mv apps/custom_app apps/my_cool_app
     ```
 2.  Rename the inner python package:
     ```bash
-    mv apps/my_cool_app/professional_certificate_creation_tool apps/my_cool_app/my_cool_app
+    mv apps/my_cool_app/custom_app apps/my_cool_app/my_cool_app
     ```
-3.  Find and replace all occurrences of `professional_certificate_creation_tool` with `my_cool_app` in all files (use VS Code or `sed`).
+3.  Find and replace all occurrences of `custom_app` with `my_cool_app` in all files (use VS Code or `sed`).
 4.  Re-install the app on your site.
 
 ### 4. Build the Frontend
@@ -80,7 +84,7 @@ Once renamed and installed, build the assets.
 bench build
 ```
 
-Access your portal at `https://your-site.com/frontend` (or your configured route).
+Access your portal at `https://your-site.com/portal` (or your configured route).
 
 ---
 

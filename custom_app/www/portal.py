@@ -15,7 +15,7 @@ def get_context():
     context.boot = get_boot()
     context.boot.csrf_token = csrf_token
     if frappe.session.user != "Guest":
-        capture("active_site", "professional_certificate_creation_tool")
+        capture("active_site", "custom_app")
     return context
 
 
@@ -27,7 +27,7 @@ def get_context_for_dev():
 
 
 def get_boot():
-    return frappe._dict(
+    boot = frappe._dict(
         {
             "frappe_version": frappe.__version__,
             "default_route": get_default_route(),
@@ -36,6 +36,15 @@ def get_boot():
         }
     )
 
+    try:
+        app_settings = frappe.get_single("App Settings")
+        if app_settings.app_title:
+            boot.site_name = app_settings.app_title
+    except Exception:
+        pass
+
+    return boot
+
 
 def get_default_route():
-    return "/education"
+    return "/portal"

@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/assets/professional_certificate_creation_tool/frontend/ && yarn copy-html-entry",
-    "copy-html-entry": "cp ../professional_certificate_creation_tool/public/frontend/index.html ../professional_certificate_creation_tool/www/education.html",
+    "build": "vite build --base=/assets/custom_app/frontend/ && yarn copy-html-entry",
+    "copy-html-entry": "cp ../custom_app/public/frontend/index.html ../custom_app/www/portal.html",
     "serve": "vite preview"
   },
   "dependencies": {
